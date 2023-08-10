@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <h3>글</h3>
 
-      {PostData.map(data => <Link href={`./${data.title}`}>
+      {PostData.map((data, index) => <Link key={index} href={`./${data.title}`}>
         <article>
           <h1>{data.title}</h1>
           <time>{data.date}</time>
