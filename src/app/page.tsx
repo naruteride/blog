@@ -15,7 +15,7 @@ export default function Home() {
             {data.summary}
           </summary>
           <div className="tags">
-            {data.tags.map(tag => <span className="tag">
+            {data.tags.map((tag, index) => <span key={index} className="tag">
               #{tag}
             </span>)}
           </div>
