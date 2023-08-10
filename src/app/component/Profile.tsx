@@ -1,5 +1,7 @@
 export default function profile(): React.ReactElement {
-    return (
-        <div id="profile">프로필</div>
-    )
+    return <>
+        <aside id="profile">
+            <h3>프로필</h3>
+        </aside>
+    </>
 }

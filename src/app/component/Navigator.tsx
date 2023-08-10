@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
 export default function Navigator(): React.ReactElement {
-    return (
+    return <>
         <nav>
-            <span>
+            <h3>
                 분류
-            </span>
+            </h3>
             <ul>
                 <Link href="./">
                     <li>전체</li>
@@ -18,5 +18,5 @@ export default function Navigator(): React.ReactElement {
                 </Link>
             </ul>
         </nav>
-    )
+    </>
 }

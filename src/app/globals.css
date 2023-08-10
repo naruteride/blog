@@ -20,12 +20,13 @@
 
 body {
   width: var(--page-width);
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
   background-color: var(--background-color);
   display: grid;
   grid-template: 3rem 1fr / 12rem 1fr 12rem;
   row-gap: 1rem;
+  column-gap: 0.5rem;
   grid-template-areas:
     "header header header"
     "navigator main profile";
@@ -53,11 +54,39 @@ main {
 
 #background {
   position: fixed;
-  top: calc(50% - 80vh / 2);
-  left: calc(50% - 80vw / 2);
+  z-index: -10;
+  top: calc(50vh - 80vh / 2);
+  left: calc(50vw - 80vw / 2);
 }
 
 #background > img {
   width: 80vw;
   height: 80vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+.tag {
+  color: dodgerblue;
+  text-decoration: underline;
 }
