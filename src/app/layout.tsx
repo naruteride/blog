@@ -1,8 +1,8 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Noto_Serif_KR } from 'next/font/google'
+import './globals.css';
+import type { Metadata } from 'next';
+import { Noto_Serif_KR } from 'next/font/google';
 import Image from "next/image";
-import BackgroundImage from "../../public/images/background-blur.svg"
+import BackgroundImage from "/public/images/background-blur.svg";
 import Header from '@/app/component/Header';
 import Navigator from '@/app/component/Navigator';
 import Profile from '@/app/component/Profile';
@@ -10,7 +10,7 @@ import Profile from '@/app/component/Profile';
 const noto_serif_KR = Noto_Serif_KR({
   weight: ['400', '700'],
   subsets: ['latin'],
-})
+});
 
 export const metadata: Metadata = {
   title: '방성훈 블로그',
@@ -24,6 +24,9 @@ export default function RootLayout({
 }) {
   return <>
     <html lang="ko">
+      <head>
+        <link rel="shortcut icon" href="/public/favicon.png" type="image/x-icon" />
+      </head>
       <body className={noto_serif_KR.className}>
         <Header />
         <Navigator />
