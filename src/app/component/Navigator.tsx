@@ -13,9 +13,9 @@ export default function Navigator(): React.ReactElement {
                 <Link href="./">
                     <li>니파 유데미 학습 일지</li>
                 </Link>
-                <Link href="./">
+                {/* <Link href="./">
                     <li>배포 서비스</li>
-                </Link>
+                </Link> */}
             </ul>
         </nav>
     </>

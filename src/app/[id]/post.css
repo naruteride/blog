@@ -1,13 +1,5 @@
-main {
+main.post {
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 1rem;
-}
-
-time {
-    display: inline-block;
-    margin-bottom: 1rem;
-    font-style: italic;
-    font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.75);
 }
