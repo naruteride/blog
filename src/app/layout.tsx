@@ -10,6 +10,7 @@ import Profile from '@/app/component/Profile';
 const noto_serif_KR = Noto_Serif_KR({
   weight: ['400', '700'],
   subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
