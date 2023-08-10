@@ -46,6 +46,9 @@ nav {
 
 main {
   grid-area: main;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
 
 #profile {
