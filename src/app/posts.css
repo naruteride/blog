@@ -8,14 +8,6 @@ article h1 {
     margin-bottom: 0;
 }
 
-time {
-    display: inline-block;
-    margin-bottom: 1rem;
-    font-style: italic;
-    font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.75);
-}
-
 article summary {
     margin: 1rem 0;
 }
