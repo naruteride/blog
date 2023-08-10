@@ -25,12 +25,10 @@ export default function RootLayout({
   return <>
     <html lang="ko">
       <body className={noto_serif_KR.className}>
-
         <Header />
         <Navigator />
         {children}
         <Profile />
-
         <div id="background">
           <Image src={BackgroundImage} width={559} height={456} alt='background image' />
         </div>
