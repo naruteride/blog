@@ -46,6 +46,7 @@ nav {
 
 main {
   grid-area: main;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
