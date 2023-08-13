@@ -5,6 +5,25 @@ export const PostData: {
     tags: string[];
 }[] = [
         {
+            title: "AI 웹개발 취업캠프 역량강화-SW심화 FE 8월 10일 과제",
+            date: "2023-08-14",
+            summary: "",
+            tags: [
+                "정보통신산업진흥원",
+                "NIPA",
+                "AI교육",
+                "프로젝트",
+                "유데미",
+                "IT개발캠프",
+                "개발자부트캠프",
+                "프론트엔드",
+                "백엔드",
+                "AI웹개발취업캠프",
+                "취업캠프",
+                "개발취업캠프"
+            ],
+        },
+        {
             title: "AI 웹개발 취업캠프 역량강화-SW심화 FE 8월 9일 과제",
             date: "2023-08-14",
             summary: "CSS의 애니메이션과 React의 라이브러리인 styled-components에 대해 학습하고 실습을 진행했다. 실습한 애플리케이션을 Netlify를 통해 배포했다.",
