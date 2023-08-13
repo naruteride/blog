@@ -62,7 +62,7 @@ main {
 }
 
 #background {
-  position: fixed;
+  position: absolute;
   z-index: -10;
   top: calc(50vh - 80vh / 2);
   left: calc(50vw - 80vw / 2);
