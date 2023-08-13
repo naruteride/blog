@@ -2,7 +2,7 @@ import "@/app/[id]/post.css";
 import { MDXContent } from "mdx/types";
 
 export default async function Page({ params }: { params: { id: string } }) {
-    let Post: MDXContent;
+    let Post: MDXContent | React.FC;
 
     try {
         Post = (await import(`@/app/posts/${params.id}.mdx`)).default;
