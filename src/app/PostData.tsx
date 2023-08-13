@@ -7,7 +7,7 @@ export const PostData: {
         {
             title: "AI 웹개발 취업캠프 역량강화-SW심화 FE 8월 10일 과제",
             date: "2023-08-14",
-            summary: "",
+            summary: "할 일 목록 애플리케이션을 개발했다. CRUD 고려하며 개발했고, 로컬스토리지를 활용했다. styled-components 라이브러리를 활용하여 나만의 스타일을 가진 할 일 목록을 만들었다.",
             tags: [
                 "정보통신산업진흥원",
                 "NIPA",
