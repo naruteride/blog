@@ -6,6 +6,7 @@ import BackgroundImage from "/public/images/background-blur.svg";
 import Header from '@/app/component/Header';
 import Navigator from '@/app/component/Navigator';
 import Profile from '@/app/component/Profile';
+// import NavButtonScript from "@/app/component/NavButtonScript";
 
 const noto_serif_KR = Noto_Serif_KR({
   weight: ['400', '700'],
@@ -36,6 +37,8 @@ export default function RootLayout({
         <div id="background">
           <Image src={BackgroundImage} width={559} height={456} alt='background image' />
         </div>
+
+        {/* <NavButtonScript /> */}
       </body>
     </html>
   </>
