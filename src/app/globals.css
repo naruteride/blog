@@ -67,6 +67,7 @@ main {
 }
 
 #background {
+  width: 100vw;
   position: absolute;
   z-index: -10;
   transition: 0.2s;

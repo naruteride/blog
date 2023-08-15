@@ -5,10 +5,7 @@ export default function NavButton() {
         document.querySelector("nav")?.classList.toggle("active");
         let background = document.querySelector("#background");
         background?.classList.toggle("active");
-        background?.addEventListener("click", (event) => {
-            event.stopPropagation();
-            handleNavigator();
-        });
+        background?.addEventListener("click", handleNavigator);
     };
 
     return <>
