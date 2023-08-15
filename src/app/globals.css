@@ -68,11 +68,16 @@ main {
 
 #background {
   width: 100vw;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   z-index: -10;
   transition: 0.2s;
-  top: calc(50vh - 80vh / 2);
-  left: calc(50vw - 80vw / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 #background>img {
