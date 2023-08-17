@@ -27,7 +27,7 @@ export default function RootLayout({
   return <>
     <html lang="ko">
       <head>
-        <link rel="shortcut icon" href="/public/favicon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/public/favicon-256.png" type="image/x-icon" />
       </head>
       <body className={noto_serif_KR.className}>
         <Header />
