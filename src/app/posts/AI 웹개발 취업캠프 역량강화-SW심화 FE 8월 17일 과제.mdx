@@ -1,0 +1,100 @@
+import Image from 'next/image';
+import img1 from "./AI 웹개발 취업캠프 역량강화-SW심화 FE 8월 17일 과제-1.png"
+
+# AI 웹개발 취업캠프 역량강화-SW심화 FE 8월 17일 과제
+<time>2023-08-22</time>
+
+## 요약
+- 리액트 카드 앱 만들기 프로젝트를 진행했다.
+
+## 실습
+### 실습 코드
+```jsx
+// App.js
+
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Menu } from './styeldComp'
+import Cards from './Cards'
+import Detail from './Detail'
+import { useSelector } from 'react-redux';
+
+function App() {
+  return (
+      <BrowserRouter> 
+        <Menu>
+          <h2>총기 소믈리에의 글록 서랍장</h2>
+        </Menu>
+        <Routes>
+          {useSelector((state) => state.contents).map((content, idx) => {
+            return <Route path={content.path} key={idx} element={<Detail content={content.detail} />} />
+          })}
+          <Route path="/" element={<Cards />} />
+        </Routes>
+      </BrowserRouter>
+  );
+}
+
+export default App;
+```
+<br /><br />
+```jsx
+// Detail.js
+
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
+const Detail = (props) => {
+  const content = props.content;
+  const navigate = useNavigate();
+  console.log(content);
+  return <div style={{ paddingTop: 20, textAlign: 'center', color: 'white' }}>
+    <table border={1} style={{margin: "auto",}}>
+      <thead>
+        <tr>
+          <td>사양</td>
+          <td>수치</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>caliber</th>
+          <td>{content.caliber}</td>
+        </tr>
+        // ...
+        <tr>
+          <th>magCapacity</th>
+          <td>{content.magCapacity}</td> 
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <button onClick={() => navigate(-1)}>BACK</button>
+  </div>
+}
+
+export default Detail
+```
+
+### 실습 과정
+- **App.js**에서 `useSelector` 함수를 통해 전역 변수를 받아온다.
+- 전역 변수 속 객체의 개수만큼 **Detail.js** 페이지를 라우팅 한다.
+- 이때 각 Detail 페이지에 전역 변수 속 `.detail` 데이터를 props로 전달한다.
+- Detail 컴포넌트는 props를 받아서 데이터를 table로 나열한다.
+
+### 실습 결과
+- <Image src={img1}
+    width="1490"
+    height="945"
+    alt="카드 앱 만들기 프로젝트 페이지. 사이트에 권총 글록과 그에 대한 간략한 설명이 담긴 카드가 나열되어 있다." />
+- [실습 배포 링크](https://seoul-ict-web-base-Card-App.netlify.app)
+- [전체 실습 코드](https://github.com/naruteride/Seoul-ICT-Web-Base-Card-App)
+
+## 후기
+- 리덕스 기능을 사용할 때 약간 헤매긴 했으나, 구글에 워낙 자료가 많아서 빠르게 완성할 수 있었다.
+- 오히려 스타일을 꾸미거나, 총기 정보를 찾고 글을 쓰는 데 훨씬 많은 시간을 썼다.
+- 코딩 보다는 노가다 작업이 더 많아서 지루했다.
+
+## 해시태그
+    #정보통신산업진흥원 #NIPA #AI교육 #프로젝트 #유데미 #IT개발캠프 #개발자부트캠프 #프론트엔드 #백엔드 #AI웹개발취업캠프 #취업캠프 #개발취업캠프
