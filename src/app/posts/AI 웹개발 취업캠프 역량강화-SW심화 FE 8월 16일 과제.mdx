@@ -1,28 +1,150 @@
-import Image from 'next/image';
-// import img1 from "./AI 웹개발 취업캠프 역량강화-SW심화 FE 8월 16일 과제-1.png"
-
 # AI 웹개발 취업캠프 역량강화-SW심화 FE 8월 16일 과제
-<time>2023-08-18</time>
+<time>2023-08-22</time>
 
 ## 요약
+- 리덕스에 대해 학습하고 실습했다.
 
 ## 리덕스
-
+### 리덕스란?
+- 리액트의 리덕스는 마치 애플리케이션의 뇌와 같다. 정보를 모으고 조직하며, 컴포넌트들 간에 원활한 소통을 가능하게 한다.
+- 컴포넌트들은 이 뇌를 참조하고 갱신하며, 데이터의 흐름을 예측 가능하고 일관성 있게 만들어준다.
+- 이 뇌 속에 저장된 상태(State)는 하나의 진리로 여겨지며, 변화는 순차적으로 관리된다.
+- **쉽게 말해 전역 변수를 쓸 수 있게 만들어준다. Props Drilling을 막아준다.**
 ### 리덕스의 구성 요소
 #### 액션
-- 사용자가 수행하는 작업 유형(type)을 지정하는 자바스크립트 객체.
+- 사용자가 수행하는 작업 유형(type)을 지정하는 자바스크립트 객체
 #### 리듀서
-- 리액트 앱의 변경 사항을 결정하고 업데이트 상태를 반환하는 함수. 
+- 리액트 앱의 변경 사항을 결정하고 업데이트 상태를 반환하는 함수
 #### 스토어
 - 전체 상태 트리를 관리하는 저장소(store)
+### 리덕스 사용이 권장되는 서비스
+- 로그인 정보
+    - 로그인 여부
+    - 닉네임
+    - 계정 정보
+- 작성 중이던 입력 데이터
 
-## 실습 과정
+## 실습
+### 실습 코드
+```jsx
+import React from 'react';
+import { createStore } from 'redux';
+import { Provider, useSelector, useDispatch } from 'react-redux';
 
-## 실습 결과
-{/* - <Image src={img1}
-    alt="" /> */}
-- [실습 배포 링크]()
-- [실습 코드]()
+function reducer(currentState, action) {
+    if (currentState === undefined) {
+        return {
+            number: 1,
+        };
+    }
+
+    const newState = { ...currentState };
+
+    if (action.type === 'PLUS') {
+        newState.number++;
+    } else if (action.type === 'MINUS') {
+        newState.number--;
+    }
+
+    return newState;
+}
+
+const store = createStore(reducer);
+
+
+export default function App() {
+    return (
+        <div id="container">
+            <h1>Root</h1>
+            <div id="grid">
+                <Provider store={store}>
+                    <Left1></Left1>
+                    <hr />
+                    <Right1></Right1>
+                </Provider>
+            </div>
+        </div>
+    );
+}
+
+function Left1() {
+    return (
+        <div>
+            <h1>Left1 </h1>
+            <Left2></Left2>
+        </div>
+    );
+}
+
+function Left2() {
+    console.log('2');
+    return (
+        <div>
+            <h1>Left2 : </h1>
+            <Left3></Left3>
+        </div>
+    );
+}
+
+function Left3() {
+    console.log('3');
+    const number = useSelector((state) => state.number);
+    return (
+        <div>
+            <h1>Left3 : {number}</h1>
+        </div>
+    );
+}
+
+function Right1() {
+    return (
+        <div>
+            <h1>Right1</h1>
+            <Right2></Right2>
+        </div>
+    );
+}
+
+function Right2() {
+    return (
+        <div>
+            <h1>Right2</h1>
+            <Right3></Right3>
+        </div>
+    );
+}
+
+function Right3() {
+    const dispatch = useDispatch();
+    return (
+        <div>
+            <h1>Right3</h1>
+            <input
+                type="button"
+                value="+"
+                onClick={() => {
+                    dispatch({ type: 'PLUS' });
+                }}
+            ></input>
+            <input
+                type="button"
+                value="-"
+                onClick={() => {
+                    dispatch({ type: 'MINUS' });
+                }}
+            ></input>
+        </div>
+    );
+}
+```
+### 실습 과정
+- 만약 리덕스가 없었다면 상대 변수와 setState 함수, 즉, props를 Left1 컴포넌트부터 Left3 컴포넌트 까지. 그리고 Right1 컴포넌트 부터 Right3 컴포넌트 까지 전달했어야 했다.
+- 그러나, 위 코드와 같이, 리덕스는 설정된 상태 props를 전역으로 관리할 수 있도록 만든다. 따라서 Props Drilling 현상을 방지해주었다.
+- createStore 함수를 통해 전역으로 관리할 상태를 설정하고, 콜백 함수로, 상태가 할 일을 설정한다.
+- 이후 dispatch를 통해 전역으로 관리되는 상태에게 행동(action)을 취하게 한다.
+- useSelector를 통해 상태의 값을 꺼내올 수 있다.
+### 전체 실습 코드
+- [실습 코드](https://github.com/naruteride/Seoul-ICT-Web-Base/tree/main/%EC%97%AD%EB%9F%89%EA%B0%95%ED%99%94-SW%EC%8B%AC%ED%99%94-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C/7%ED%9A%8C%EC%B0%A8/my-app)
 
 ## 해시태그
     #정보통신산업진흥원 #NIPA #AI교육 #프로젝트 #유데미 #IT개발캠프 #개발자부트캠프 #프론트엔드 #백엔드 #AI웹개발취업캠프 #취업캠프 #개발취업캠프

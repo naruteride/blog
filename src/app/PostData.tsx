@@ -6,8 +6,8 @@ export const PostData: {
 }[] = [
         {
             title: "AI 웹개발 취업캠프 역량강화-SW심화 FE 8월 16일 과제",
-            date: "2023-08-18",
-            summary: "",
+            date: "2023-08-22",
+            summary: "리덕스에 대해 학습하고 실습했다.",
             tags: [
                 "정보통신산업진흥원",
                 "NIPA",
