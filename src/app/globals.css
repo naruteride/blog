@@ -7,7 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --page-width: 1120px;
-  --background-color: #F0F0F0;
+  --background-color: #f2f2f2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +29,9 @@ body {
   min-height: 100vh;
   margin: auto;
   background-color: var(--background-color);
+  background-image: radial-gradient(circle, #c9c9c9 5%, transparent 0), radial-gradient(circle, #d9d9d9 5%, transparent 0);
+  background-position: 0 0, 15px 15px;
+  background-size: 30px 30px;
   display: grid;
   grid-template: 3rem 1fr / 12rem 1fr 12rem;
   row-gap: 1rem;

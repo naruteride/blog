@@ -35,7 +35,7 @@ export default function RootLayout({
         {children}
         <Profile />
         <div id="background">
-          <Image src={BackgroundImage} width={559} height={456} alt='background image' />
+          {/* <Image src={BackgroundImage} width={559} height={456} alt='background image' /> */}
         </div>
 
         {/* <NavButtonScript /> */}
