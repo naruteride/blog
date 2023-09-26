@@ -3,89 +3,94 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --page-width: 1120px;
-  --background-color: #f2f2f2;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+    --page-width: 1120px;
+    --background-color: #f2f2f2;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
 * {
-  word-wrap: break-word;
-  word-break: keep-all;
+    word-wrap: break-word;
+    word-break: keep-all;
 }
 
 body {
-  position: relative;
-  width: var(--page-width);
-  min-height: 100vh;
-  margin: auto;
-  background-color: var(--background-color);
-  background-image: radial-gradient(circle, #c9c9c9 5%, transparent 0), radial-gradient(circle, #d9d9d9 5%, transparent 0);
-  background-position: 0 0, 15px 15px;
-  background-size: 30px 30px;
-  display: grid;
-  grid-template: 3rem 1fr / 12rem 1fr 12rem;
-  row-gap: 1rem;
-  column-gap: 0.5rem;
-  grid-template-areas:
-    "header header header"
-    "navigator main profile";
+    position: relative;
+    width: var(--page-width);
+    min-height: 100vh;
+    margin: auto;
+    background-color: var(--background-color);
+    background-image:
+        radial-gradient(circle, #c9c9c9 5%, transparent 0),
+        radial-gradient(circle, #d9d9d9 5%, transparent 0);
+    background-position:
+        0 0,
+        15px 15px;
+    background-size:
+        30px 30px;
+    display: grid;
+    grid-template: 3rem 1fr / 12rem 1fr 12rem;
+    row-gap: 1rem;
+    column-gap: 0.5rem;
+    grid-template-areas:
+        "header header header"
+        "navigator main profile";
 }
 
 header {
-  grid-area: header;
-  border-bottom: 1px solid #b4b4b4;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    grid-area: header;
+    border-bottom: 1px solid #b4b4b4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header>button {
-  display: none;
+    display: none;
 }
 
 nav {
-  grid-area: navigator;
+    grid-area: navigator;
 }
 
 main {
-  grid-area: main;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
+    grid-area: main;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
 }
 
 #profile {
-  grid-area: profile;
+    grid-area: profile;
 }
 
 #background {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  z-index: -10;
-  transition: 0.2s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: -10;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 #background>img {
-  width: 80vw;
-  height: 80vh;
+    width: 80vw;
+    height: 80vh;
 }
 
 h1,
@@ -94,80 +99,80 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
-  margin-bottom: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .tags {}
 
 .tag {
-  display: inline-block;
-  color: dodgerblue;
-  text-decoration: underline;
-  margin-right: 1rem;
+    display: inline-block;
+    color: dodgerblue;
+    text-decoration: underline;
+    margin-right: 1rem;
 }
 
 time {
-  display: inline-block;
-  margin-bottom: 1rem;
-  font-style: italic;
-  font-size: 0.9em;
-  color: rgba(0, 0, 0, 0.75);
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-style: italic;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.75);
 }
 
 @media (max-width: 1120px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-  }
+    body {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
 
-  header {
-    padding: 0 0 0 1rem;
-  }
+    header {
+        padding: 0 0 0 1rem;
+    }
 
-  header>button {
-    display: block;
-    width: 3rem;
-    height: 3rem;
-    font-size: 2rem;
-  }
+    header>button {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        font-size: 2rem;
+    }
 
-  nav {
-    position: fixed;
-    left: -20rem;
-    z-index: 20;
-    width: 20rem;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
-    transition: 0.2s;
-  }
+    nav {
+        position: fixed;
+        left: -20rem;
+        z-index: 20;
+        width: 20rem;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        transition: 0.2s;
+    }
 
-  nav.active {
-    box-shadow: 0 0 10rem -1rem rgba(0, 0, 0, 0.75);
-    left: 0;
-    --nav-active: true;
-  }
+    nav.active {
+        box-shadow: 0 0 10rem -1rem rgba(0, 0, 0, 0.75);
+        left: 0;
+        --nav-active: true;
+    }
 
-  #background.active {
-    z-index: 10;
-    backdrop-filter: blur(1px);
-  }
+    #background.active {
+        z-index: 10;
+        backdrop-filter: blur(1px);
+    }
 
-  main>h3 {
-    padding: 0 1rem;
-  }
+    main>h3 {
+        padding: 0 1rem;
+    }
 }
